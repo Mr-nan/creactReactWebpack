@@ -3,6 +3,10 @@
  */
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
-import ProductBox from './components/productBox';
-ReactDOM.render(<ProductBox />, document.getElementById('root'));
+import {HotLoader} from 'react-hot-loader';
+import Root from './components/Root';
+ReactDOM.render(
+    <Root />, document.getElementById('root')
+);
+
 
