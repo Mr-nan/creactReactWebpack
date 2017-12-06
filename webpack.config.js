@@ -1,7 +1,8 @@
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
-    entry: ['webpack/hot/dev-server', path.resolve(__dirname, './app/main.js')],
+    entry: [path.resolve(__dirname, './app/main.js')],
     output: {
         path: path.resolve(__dirname, './build'),
         filename: 'bundle.js',
@@ -61,5 +62,15 @@ module.exports = {
                 // })
             },
         ]
-    },
+    }, plugins:[
+        new webpack.HotModuleReplacementPlugin()
+    ],
+    devServer:{
+        contentBase: "./build",
+        historyApiFallback:true,
+        port:3000,
+        inline:true,
+        hot:true
+    }
+
 };
